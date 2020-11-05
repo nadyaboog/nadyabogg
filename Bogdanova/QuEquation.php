@@ -11,12 +11,19 @@ Class QuEquation extends Equation implements EquationInterface
         return $x;
     }
 
+    /**
+     * @param float $a
+     * @param float $b
+     * @param float $c
+     * @return array|null
+     */
     public function qu_solve($a, $b, $c)
     {
         $x = $this->dis($a, $b, $c);
         if ($a == 0) {
             return $this->solve($b, $c);
         }
+        MyLog::log("Это квадратное уравнение");
         if ($x > 0) {
             return $this->X = array(
                 -($b + sqrt($b ** 2 - 4 * $a * $c) / 2 * $a),
@@ -27,7 +34,7 @@ Class QuEquation extends Equation implements EquationInterface
             return $this->X = array(-($b / 2 * $a));
         }
 
-        return null;
+        throw new BogdanovaException("Ошибка: уравнение не имеет корней.");
 
     }
 }
