@@ -1,0 +1,26 @@
+{
+  "name": "nadyaboog/nadyabogg",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Nadyaboog",
+      "email": "nadyabogdanova2001@yandex.ru"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/rok9ru/trpo-core.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/nadyaboog/nadyabogglibrary.git"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "rok9ru/trpo-core":"^2.0",
+    "nadyaboog/nadyabogglibrary":"^1.0"
+  }
+}
+

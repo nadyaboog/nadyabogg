@@ -4,14 +4,8 @@ use Bogdanova\BogdanovaException;
 use Bogdanova\MyLog;
 use Bogdanova\QuEquation;
 
-include "core/EquationInterface.php";
-include "core/LogAbstract.php";
-include "core/LogInterface.php";
-include "Bogdanova/MyLog.php";
-include "Bogdanova/Equation.php";
-include "Bogdanova/QuEquation.php";
-include  "Bogdanova/BogdanovaException.php";
-//
+require_once(__DIR__."/vendor/autoload.php");
+
 ini_set("display_errors", 1);
 error_reporting (-1);
 
@@ -28,7 +22,7 @@ try{
     $vc = $values[2];
 
     MyLog::log("Введено уравнение ".$va."x^2 + ".$vb."x + ".$vc." = 0");
-    $x = $b->qu_solve($va,$vb,$vc);
+    $x = $b->solve($va,$vb,$vc);
 
     $str = implode(", ", $x);
     MyLog::log("Корни уравнения: ".$str);
